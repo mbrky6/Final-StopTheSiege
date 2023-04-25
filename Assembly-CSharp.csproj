@@ -36,8 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Tile.cs" />
      <Compile Include="Assets\Scripts\Selection.cs" />
+     <Compile Include="Assets\Scripts\Tile.cs" />
+     <Compile Include="Assets\Scripts\Building.cs" />
+     <Compile Include="Assets\Scripts\Musquareteer.cs" />
+     <Compile Include="Assets\Scripts\Squaremurai.cs" />
+     <Compile Include="Assets\Scripts\Blocker.cs" />
+     <Compile Include="Assets\Scripts\Squaresher.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Triplets.cs" />
+     <Compile Include="Assets\Scripts\Tritone.cs" />
+     <Compile Include="Assets\Scripts\Arrowhead.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Program Files\Unity\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

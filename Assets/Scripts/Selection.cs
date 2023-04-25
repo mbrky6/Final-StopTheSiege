@@ -8,6 +8,7 @@ public class Selection : MonoBehaviour {
     public Material highlightMaterialYes; // Material of valid hovered object
     public Material highlightMaterialNo; // Material of invalid hovered object
     public Material selectedMaterial; // Material of selected object
+    public string validType; // Current valid tile type
 
     private Material originalMaterialHighlight; // Original material of highlighted object
     private Material originalMaterialSelection; // Original material of selected object
@@ -28,10 +29,23 @@ public class Selection : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Draw a ray from the mouse position
         if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) {
             highlight = raycastHit.transform;
+            if (highlight.GetComponent<Tile>().type == validType) {
+                valid = true;
+            } // if (player type and highlighted tile type match)
+            else {
+                valid = false;
+            } // else
+
             if (highlight.CompareTag("tile") && highlight != selection) {
-                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterialYes) {
-                    originalMaterialHighlight = highlight.GetComponent<MeshRenderer>().material;
-                    highlight.GetComponent<MeshRenderer>().material = highlightMaterialYes;
+                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterialYes || highlight.GetComponent<MeshRenderer>().material != highlightMaterialNo) {
+                    if (valid) {
+                        originalMaterialHighlight = highlight.GetComponent<MeshRenderer>().material;
+                        highlight.GetComponent<MeshRenderer>().material = highlightMaterialYes;
+                    } // if (valid)
+                    else {
+                        originalMaterialHighlight = highlight.GetComponent<MeshRenderer>().material;
+                        highlight.GetComponent<MeshRenderer>().material = highlightMaterialNo;
+                    } // else
                 } // if (highlighted object does not have the highlighted material)
             } // if (highlighted object is a tile and not selected)
             else {
@@ -41,7 +55,7 @@ public class Selection : MonoBehaviour {
 
         // Selecting
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
-            if (highlight) {
+            if (highlight && valid) {
                 if (selection != null) {
                     selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
                 } // if (object is selected)
@@ -51,7 +65,7 @@ public class Selection : MonoBehaviour {
                     selection.GetComponent<MeshRenderer>().material = selectedMaterial;
                 } // if (clicked object is a tile)
                 highlight = null;
-            } // if (the object is highlighted)
+            } // if (the object is highlighted and valid)
             else {
                 if (selection) {
                     selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
