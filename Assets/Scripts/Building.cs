@@ -7,6 +7,7 @@ public class Building : MonoBehaviour {
     public string validTile; // Tile type the building can be placed on
     public int price; // Cost of the building
     public int range; // How many tiles out the building can attack or defend from
-    public int dps; // How much damage the building deals per second
+    public int damage; // How much damage the building deals per hit
+    public int delay; // Time between hits
 
 } // + class Building
