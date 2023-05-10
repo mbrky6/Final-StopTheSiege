@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class Arrowhead : MonoBehaviour {
     
-    // Start is called before the first frame update
-    void Start() {
-        
-    } // void Start
-
-    // Update is called once per frame
-    void Update() {
-        
-    } // void Update
+    void OnCollisionEnter(Collision other) {
+        if (other.collider.tag == "Obstruction") {
+            this.gameObject.GetComponent<Enemy>().hp = 0;
+        } // if (Something is blocking the path)
+    } // void OnCollisionEnter
 } // + class Arrowhead

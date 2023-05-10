@@ -3,7 +3,15 @@ guid: 5b04a945b802902479e37e65646aff11
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - highlightMaterialYes: {instanceID: 0}
+  - highlightMaterialNo: {instanceID: 0}
+  - selectedMaterial: {instanceID: 0}
+  - Squaremurai: {fileID: 3132587156793045305, guid: 21ee9ca019854ba4b9a1ebd9ef67f5f7, type: 3}
+  - Musquareteer: {fileID: 9005075448383137178, guid: 77993da4c0a53bf41b88fd23ea41a307, type: 3}
+  - Blocker: {fileID: 5909667950882645842, guid: 2bbac60d73fac0144ad4b3bf7665fd93, type: 3}
+  - Squaresher: {fileID: 5301122959193274108, guid: aa6bc2017e956ac4684ed7b32605aa36, type: 3}
+  - chosenBuilding: {fileID: 5909667950882645842, guid: 2bbac60d73fac0144ad4b3bf7665fd93, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - tile
+  - EnemyGoal
+  - Obstruction
+  - Enemy
+  - Anvil
   layers:
   - Default
   - TransparentFX
